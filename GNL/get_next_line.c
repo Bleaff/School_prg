@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 01:51:23 by bleaf             #+#    #+#             */
-/*   Updated: 2021/12/04 00:26:26 by bleaf            ###   ########.fr       */
+/*   Updated: 2021/12/31 00:55:33 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*get_next_line(int fd)
 	static char	*wraped_sp;
 	int			rd;
 
+	if (fd == -1)
+		return (NULL);
 	wraped_sp = NULL;
 	ret_str = ft_strdup(wraped_sp);
 	rd = read(fd, buf, BUFFER_SIZE);
