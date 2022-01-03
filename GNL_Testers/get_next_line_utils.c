@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 00:17:57 by bleaf             #+#    #+#             */
-/*   Updated: 2021/12/04 00:18:19 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/01/03 22:06:43 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ char	*ft_strchr(const char	*s, int c)
 {
 	while (*s)
 	{
-		if (*s == (char) c || c == '\n')
+		if (*s == (char) c && c == '\n')
 			return ((char *)s);
 		s++;
 	}
 	if (c == '\0' && *s == '\0')
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }
 
 char	*ft_strdup(const char *src)
@@ -93,8 +93,10 @@ char	*glue_and_free(char *left, char *buf)
 	char	*ret;
 
 	if (!left)
+	{
 		return (ft_strdup(buf));
-	else if (!left || !buf)
+	}
+	else if (left && buf)
 	{
 		ret = ft_strjoin(left, buf);
 		free(left);

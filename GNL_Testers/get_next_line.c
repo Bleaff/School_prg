@@ -6,50 +6,42 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 01:51:23 by bleaf             #+#    #+#             */
-/*   Updated: 2021/12/04 01:31:40 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/01/03 22:09:25 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-void	
+#include <stdio.h>
 
 char	*get_next_line(int fd)
 {
-	char		*buf;
+	char		buf[BUFFER_SIZE + 1];
 	char		*ret_str;
 	static char	*wraped_sp;
 	int			rd;
 
-	if (fd > 2000 || fd < 0)
+	if (fd < 0 || fd > 600 || BUFFER_SIZE < 0)
 		return (NULL);
-	wraped_sp = ;
+	wraped_sp = NULL;
 	ret_str = ft_strdup(wraped_sp);
-	rd = 1;
-	while (rd)
+	rd = read(fd, buf, BUFFER_SIZE);
+	while (rd != -1 && rd)
 	{
-		rd = read(fd, buf, BUFFER_SIZE);
 		buf[rd] = '\0';
+		
 		if (ft_strchr(buf, '\n'))
 		{
+			//printf("%s - result of if\n", ft_strchr(buf, '\n')); /////// DEBUG
 			wraped_sp = ft_strchr(buf, '\n');
+			printf("FIRST:%s - ret_str\n", ret_str);/////// DEBUG
 			ret_str = glue_and_free(ret_str, buf);
+			printf("SECOND:%s - ret_str\n", ret_str);/////// DEBUG
 			break ;
 		}
 		ret_str = glue_and_free(ret_str, buf);
+		rd = read(fd, buf, BUFFER_SIZE);
 	}
 	if (!ret_str)
 		return (NULL);
 	return (ret_str);
-}
-
-int main(void)
-{
-	char *print_f;
-	int fd = open("TEST.txt",O_RDONLY );
-	while (print_f = get_next_line(fd))
-	{
-		printf("%s", print_f);
-	}
-	return (0);
 }
