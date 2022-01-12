@@ -5,78 +5,44 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/06 04:14:23 by bleaf             #+#    #+#              #
-#    Updated: 2021/11/11 12:13:36 by bleaf            ###   ########.fr        #
+#    Created: 2022/01/12 01:28:49 by bleaf             #+#    #+#              #
+#    Updated: 2022/01/12 01:30:10 by bleaf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_atoi.c\
-		ft_bzero.c\
-		ft_calloc.c\
-		ft_isalnum.c\
-		ft_isalpha.c\
-		ft_isascii.c\
-		ft_isdigit.c\
-		ft_isprint.c\
-		ft_memchr.c\
-		ft_memcmp.c\
-		ft_memcpy.c\
-		ft_memmove.c\
-		ft_memset.c\
-		ft_strchr.c\
-		ft_strrchr.c\
-		ft_strdup.c\
-		ft_strlcat.c\
-		ft_strlcpy.c\
-		ft_strlen.c\
-		ft_strncmp.c\
-		ft_strnstr.c\
-		ft_tolower.c\
-		ft_toupper.c\
-		ft_substr.c\
-		ft_strjoin.c\
-		ft_strtrim.c\
-		ft_split.c\
-		ft_itoa.c\
-		ft_strmapi.c\
-		ft_striteri.c\
-		ft_putchar_fd.c\
-		ft_putstr_fd.c\
-		ft_putendl_fd.c\
-		ft_putnbr_fd.c\
+SRCS 	= 	ft_printf.c\
+		ft_printf_utils.c\
+		ft_printf_utils_2.c\
+		ft_printf_utils_3.c\
 
-OBJS			= $(SRCS:.c=.o)
+OBJS	= ${SRCS:.c=.o}
 
-BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
-					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-					ft_lstmap.c ft_lstnew.c ft_lstsize.c
-BONUS_OBJS		= $(BONUS:.c=.o)
+HEADER	= ft_printf.h
 
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+NAME	= libftprintf.a
 
-NAME			= libft.a
+CC	= gcc
 
-all:			$(NAME)
+LIBCC	= ar rcs
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+CFLAGS	= -Wall -Wextra -Werror
 
-HEADER			= libft.h
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-%.o:			%.c $(HEADER)
-				$(CC) $(CFLAGS) -c $< -o $@
+all: $(NAME)
+
+${OBJS}: ${HEADER} Makefile
+
+${NAME}: $(OBJS) 
+	${LIBCC} ${NAME} $?
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+	@rm -rf ${OBJS}
 
-fclean:			clean
-				$(RM) $(NAME)
+fclean:	clean
+	@rm -rf ${NAME}
 
-re:				fclean $(NAME)
+re: fclean all
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-.PHONY:			all clean fclean re bonus
+.PHONY: all clean fclean re
