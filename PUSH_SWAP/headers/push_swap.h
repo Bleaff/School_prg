@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 03:45:42 by bleaf             #+#    #+#             */
-/*   Updated: 2021/11/11 12:04:14 by bleaf            ###   ########.fr       */
+/*   Created: 2022/03/11 14:46:41 by bleaf             #+#    #+#             */
+/*   Updated: 2022/03/11 15:10:29 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*lst_last;
+# include "FT_PRINTF/ft_printf.h"
+# include "libft/libft.h"
 
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		lst_last = ft_lstlast(*lst);
-		lst_last->next = new;
-	}
-}
+#endif

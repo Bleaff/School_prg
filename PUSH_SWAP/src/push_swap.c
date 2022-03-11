@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 04:10:17 by bleaf             #+#    #+#             */
-/*   Updated: 2021/11/06 04:10:18 by bleaf            ###   ########.fr       */
+/*   Created: 2022/03/11 15:10:34 by bleaf             #+#    #+#             */
+/*   Updated: 2022/03/11 15:11:37 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/push_swap.h"
 
-int	ft_isprint(int n)
+int	main(void)
 {
-	if (n >= 32 && n <= 126)
-		return (1);
+	ft_printf("Hello fucking world !\n");
 	return (0);
 }
