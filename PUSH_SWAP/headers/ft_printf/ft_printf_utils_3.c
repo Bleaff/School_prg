@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 01:01:56 by bleaf             #+#    #+#             */
-/*   Updated: 2022/01/12 03:54:08 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/12 15:32:51 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ unsigned long	ft_ulpow(int num, int pow)
 	return (ans);
 }
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putch_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

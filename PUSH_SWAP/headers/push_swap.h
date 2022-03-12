@@ -6,14 +6,16 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:46:41 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/11 15:10:29 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/12 17:44:43 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-# include "FT_PRINTF/ft_printf.h"
-# include "libft/libft.h"
+/*
+        ***INCLUDES***
+*/
+# include "./ft_printf/ft_printf.h"
+# include "./libft/libft.h"
 
 #endif

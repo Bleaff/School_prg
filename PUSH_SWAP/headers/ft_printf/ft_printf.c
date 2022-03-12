@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 23:31:51 by bleaf             #+#    #+#             */
-/*   Updated: 2022/01/12 03:28:32 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/12 15:34:59 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_put_str_arg(va_list list, char descr)
 		return (0);
 	else if (descr == 'c')
 	{
-		ft_putchar_fd(va_arg(list, int), 1);
+		ft_putch_fd(va_arg(list, int), 1);
 		return (1);
 	}
 	else if (descr == 's')

@@ -1,18 +1,21 @@
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-SRC = 	/src/push_swap.c
-HEADERS = /headers/push_swap.h
+SRC = 	./src/push_swap.c
+HEADERS = ./headers/push_swap.h
 LIBFT = libft
 FTPRINTF = ft_printf
 OBJ=$(SRC:.c=.o)
 GREEN = \033[1;32m
 
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
 all : $(NAME)
 
 $(NAME) : libft printf $(OBJ)
 
-		@$(CC) $(CFLAGS) $(SRC) -o $(NAME) -I $(HEADERS) -L ./LIBFT -lft  -L ./FTPRINTF -lftprintf
+		@$(CC) $(CFLAGS) $(SRC) -o $(NAME) -I $(HEADERS) -L ./headers/libft -lft  -L ./headers/ft_printf -lftprintf
 
 		@echo "$(GREEN)Project successfully compiled"
 
