@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 01:01:56 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/12 15:32:51 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/18 23:20:12 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_get_unb_len(unsigned int nb, int del)
 	long int	i;
 
 	i = 0;
-	if (nb < 0)
+	if (nb < 1)
 		nb *= -1;
 	while (nb)
 	{
@@ -32,7 +32,7 @@ int	ft_get_ul_len(unsigned long nb)
 	long unsigned	i;
 
 	i = 0;
-	if (nb < 0)
+	if (nb < 1)
 		nb *= -1;
 	while (nb)
 	{

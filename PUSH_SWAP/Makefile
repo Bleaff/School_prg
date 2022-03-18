@@ -2,7 +2,7 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 SRC = 	./src/push_swap.c
-HEADERS = ./headers/push_swap.h
+HEADERS = ./headers
 LIBFT = libft
 FTPRINTF = ft_printf
 OBJ=$(SRC:.c=.o)
