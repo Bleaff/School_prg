@@ -6,17 +6,17 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 03:56:56 by bleaf             #+#    #+#             */
-/*   Updated: 2021/11/11 12:18:16 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/19 01:27:46 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(int *))
 {
 	if (!lst)
 		return ;
 	if (del)
-		del(lst->content);
+		del(&lst->content);
 	free(lst);
 }

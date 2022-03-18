@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:46:41 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/18 23:32:47 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/19 01:14:38 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@
         ***LIST OPTIONS***
 */
 void push(t_list **a, t_list **b);
-void print_elem(void *a);
+void print_elem(int a);
 #endif

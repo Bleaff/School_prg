@@ -1,7 +1,7 @@
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-SRC = 	./src/push_swap.c
+SRC = 	./src/push_swap.c ./src/push_swap_moves.c
 HEADERS = ./headers
 LIBFT = libft
 FTPRINTF = ft_printf
@@ -21,7 +21,7 @@ $(NAME) : libft printf $(OBJ)
 
 
 libft:
-		@make -C ./headers/libft
+		@make bonus -C ./headers/libft
 printf:
 		@make -C ./headers/ft_printf
 

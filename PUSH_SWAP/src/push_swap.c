@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:10:34 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/18 23:33:24 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/19 01:40:50 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@ int	main(int argc, char *argv[])
 {
 	t_list *a = NULL;
 	t_list *b = NULL;
-	int *new = NULL;
+	int i = 1;
 	if(argc == 1)
 		return(-1);
-	while (--argc)
+	while (i < argc)
 	{
-		*new = ft_atoi(argv[argc]);
-		ft_lstadd_back(&a, ft_lstnew((void *)&new));
+		ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i++])));
 	}
 	for (size_t i = 0; i < 3; i++)
 	{

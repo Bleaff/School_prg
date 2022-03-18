@@ -6,13 +6,13 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 19:18:25 by bleaf             #+#    #+#             */
-/*   Updated: 2021/11/11 03:19:54 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/19 01:10:25 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*new;
 
