@@ -1,7 +1,9 @@
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-SRC = 	./src/push_swap.c ./src/push_swap_moves.c
+SRC = 	./src/push_swap.c	./src/push_swap_moves.c	./src/push_swap_moves_combined.c ./src/ft_sort_utils.c\
+\
+
 HEADERS = ./headers
 LIBFT = libft
 FTPRINTF = ft_printf

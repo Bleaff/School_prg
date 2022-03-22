@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:10:34 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/19 01:40:50 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/22 18:51:29 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ int	main(int argc, char *argv[])
 	}
 	for (size_t i = 0; i < 3; i++)
 	{
-		push(&a,&b);
+		ft_push(&a,&b);
 	}
 	ft_printf("List a: ");
 	ft_lstiter(a, print_elem);
 	ft_printf("\nList b: ");
 	ft_lstiter(b, print_elem);
+	ft_printf("\n%d\n", is_sorted(&a));
+	ft_printf("uniq? %d\n", is_unq_stack(&a));
 	return(0);
 }

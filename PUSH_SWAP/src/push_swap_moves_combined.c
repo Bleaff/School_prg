@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   push_swap_moves_combined.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 04:22:21 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/22 15:04:42 by bleaf            ###   ########.fr       */
+/*   Created: 2022/03/22 17:20:38 by bleaf             #+#    #+#             */
+/*   Updated: 2022/03/22 17:27:09 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/push_swap.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(int))
+void	ft_rr(t_list **a, t_list **b)
 {
-	if (lst && f)
-	{
-		while (lst)
-		{
-			f(lst->content);
-			lst = lst->next;
-		}
-	}
+	ft_rlist(a);
+	ft_rlist(b);
+	write(1,"rr\n",3);
+}
+void	ft_rrr(t_list **a, t_list **b)
+{
+	ft_rrlist(a);
+	ft_rrlist(b);
+	write(1,"rrr\n",4);
 }
