@@ -6,7 +6,7 @@
 #    By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 04:14:23 by bleaf             #+#    #+#              #
-#    Updated: 2021/11/11 12:13:36 by bleaf            ###   ########.fr        #
+#    Updated: 2022/03/24 12:20:49 by bleaf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ NAME			= libft.a
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+				@ar rcs $(NAME) $(OBJS)
 
 HEADER			= libft.h
 
@@ -77,6 +77,6 @@ fclean:			clean
 re:				fclean $(NAME)
 
 bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+				@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re bonus

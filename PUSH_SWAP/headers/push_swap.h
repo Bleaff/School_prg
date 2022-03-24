@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:46:41 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/22 18:49:28 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 10:37:13 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 */
 # include "./libft/libft.h"
 # include "./ft_printf/ft_printf.h"
+# include <limits.h>
 /*
         ***LIST OPTIONS***
 */
@@ -32,4 +33,8 @@ void	print_elem(int a);
 */
 int	is_sorted(t_list **stk);
 int	is_unq_stack(t_list **lst);
+/*
+        ***PUSH_SWAP UTILS***
+*/
+int	ps_atoi(const char *str);
 #endif

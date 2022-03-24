@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:10:34 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/22 18:51:29 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 12:19:23 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ int	main(int argc, char *argv[])
 		return(-1);
 	while (i < argc)
 	{
-		ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i++])));
+		ft_lstadd_back(&a, ft_lstnew(ps_atoi(argv[i++])));
 	}
+	if(is_sorted(&a))
+		return (0);
 	for (size_t i = 0; i < 3; i++)
 	{
 		ft_push(&a,&b);
