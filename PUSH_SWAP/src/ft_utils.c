@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 16:24:38 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/25 00:04:37 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,71 @@ int	ps_atoi(const char *str)
 		i++;
 	}
 	return (res * neg);
+}
+
+int	find_max(t_list **a)
+{
+	t_list	*iter;
+	int		max;
+
+	iter = *a;
+	max = iter->content;
+	while (iter)
+	{
+		if (max < iter->content)
+			max = iter->content;
+		iter = iter->next;
+	}
+	return (max);
+}
+
+int	get_pos_top(t_list **a, int con)
+{
+	t_list	*iter;
+	int		i;
+
+	i = 0;
+	if (!(*a))
+		return (-1);
+	iter = *a;
+	if (con > find_max(a))
+	{
+		while (iter && iter->content != find_min(a))
+		{
+			iter = iter->next;
+			i++;
+		}
+	}
+	else if (con < find_max(a))
+	{
+		while (iter && con > iter->content)
+		{
+			iter = iter->next;
+			i++;
+		}
+	}
+	return (i);
+}
+
+int	get_pos_bottom(t_list **a, int con)
+{
+	t_list	*iter;
+	int		i;
+
+	i = 0;
+	if (!(*a))
+		return (-1);
+	iter = *a;
+	if (con > find_max(a))
+		while (iter && iter->content != find_min(a))
+			iter = iter->next;
+	else if (con < find_max(a))
+		while (iter && con > iter->content)
+			iter = iter->next;
+	while (iter)
+	{
+		i++;
+		iter = iter->next;
+	}
+	return (i);
 }

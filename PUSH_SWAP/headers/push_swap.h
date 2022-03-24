@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:46:41 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 20:04:33 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/25 00:17:11 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,15 @@ int		is_sorted(t_list **stk);
 int		is_unq_stack(t_list **lst);
 void	sort2(t_list **lst, char liter);
 void	sort3(t_list **a, char liter);
+void	sort6(t_list **a, t_list **b);
 /*
         ***PUSH_SWAP UTILS***
 */
 void	error(void);
 int		ps_atoi(const char *str);
+int		find_max(t_list **a);
+int		find_min(t_list **a);
+int		get_pos_bottom(t_list **a, int con);
+int		get_pos_top(t_list **a, int con);
+void	min_on_top(t_list **a);
 #endif

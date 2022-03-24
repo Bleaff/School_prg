@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:10:34 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 20:05:18 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/25 00:21:54 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ int	main(int argc, char *argv[])
 		return (0);
 	else if (ft_lstsize(a) <= 3)
 		sort3(&a, 'a');
-	// else if (ft_lstsize(a) <= 6)
-	// 	sort6(&a, &b);
-	ft_printf("List a: ");
-	ft_lstiter(a, print_elem);
-	ft_printf("\nList b: ");
-	ft_lstiter(b, print_elem);
-	ft_printf("sorted? \n%d\n", is_sorted(&a));
+	else if (ft_lstsize(a) <= 6)
+		sort6(&a, &b);
+	// ft_printf("List a: ");
+	// ft_lstiter(a, print_elem);
+	// ft_printf("\nList b: ");
+	// ft_lstiter(b, print_elem);
+	// ft_printf("sorted? \n%d\n", is_sorted(&a));
 	return (0);
 }

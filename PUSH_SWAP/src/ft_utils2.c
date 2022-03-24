@@ -1,53 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_utils.c                                    :+:      :+:    :+:   */
+/*   ft_utils2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 18:01:16 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 00:06:21 by bleaf            ###   ########.fr       */
+/*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
+/*   Updated: 2022/03/25 00:20:49 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int	is_sorted(t_list **stk)
+int	find_min(t_list **a)
 {
-	int		check;
-	t_list	*lst;
+	t_list	*iter;
+	int		min;
 
-	lst = *stk;
-	if (!*stk)
-		return (0);
-	check = lst->content;
-	while (lst)
+	iter = *a;
+	min = iter->content;
+	while (iter)
 	{
-		if (check > lst->content)
-			return (0);
-		else
-			check = lst->content;
-		lst = lst->next;
+		if (min > iter->content)
+			min = iter->content;
+		iter = iter->next;
 	}
-	return (1);
+	return (min);
 }
 
-int	is_unq_stack(t_list	**lst)
+void	min_on_top(t_list **a)
 {
-	t_list	*il;
-	t_list	*jl;
+	int		min;
 
-	il = *lst;
-	while (il)
+	if (!(*a))
+		return ;
+	min = find_min(a);
+	while ((*a)->content != min)
 	{
-		jl = il->next;
-		while (jl)
-		{
-			if (il->content == jl->content)
-				error();
-			jl = jl->next;
-		}
-		il = il->next;
+		if (get_pos_top(a, min)
+			>= get_pos_bottom(a, min))
+			pr_rrlist(a, 'a');
+		else
+			pr_rlist(a, 'a');
 	}
-	return (1);
 }
