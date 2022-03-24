@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 19:13:23 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 19:16:42 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 20:21:21 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	pr_push(t_list **a, t_list **b, char liter)
 void	pr_rrlist(t_list **stk, char liter)
 {
     rrlist(stk);
-    write(1, "rr", 1);
+    write(1, "rr", 2);
     write(1, &liter, 1);
     write(1, "\n", 1);
 }
