@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:01:16 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/22 18:55:26 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 17:31:12 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_sorted(t_list **stk)
 
 	lst = *stk;
 	if (!*stk)
-		return 0;
+		return (0);
 	check = lst->content;
 	while (lst)
 	{
@@ -31,7 +31,8 @@ int	is_sorted(t_list **stk)
 	}
 	return (1);
 }
-int is_unq_stack(t_list **lst)
+
+int	is_unq_stack(t_list	**lst)
 {
 	t_list	*il;
 	t_list	*jl;
@@ -43,10 +44,15 @@ int is_unq_stack(t_list **lst)
 		while (jl)
 		{
 			if (il->content == jl->content)
-				return (0);
+				error();
 			jl = jl->next;
 		}
 		il = il->next;
 	}
 	return (1);
+}
+
+void	sort3(t_list **a)
+{
+	
 }

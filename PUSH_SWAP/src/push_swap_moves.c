@@ -6,26 +6,28 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 22:59:01 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 11:53:53 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 16:28:46 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void ft_push(t_list **a, t_list **b)
+void	ft_push(t_list **a, t_list **b)
 {
-	t_list *tmp;
-	if(!(*a))
+	t_list	*tmp;
+
+	if (!(*a))
 		return ;
 	tmp = (*a);
 	(*a) = (*a)->next;
 	tmp->next = (*b);
 	(*b) = tmp;
 }
-void ft_rrlist(t_list **stk)
+
+void	ft_rrlist(t_list **stk)
 {
 	t_list	*last;
-	t_list *prelast;
+	t_list	*prelast;
 
 	if (!stk)
 		return ;
@@ -39,18 +41,20 @@ void ft_rrlist(t_list **stk)
 	last->next = *stk;
 	*stk = last;
 }
-void ft_rlist(t_list **stk)
+
+void	ft_rlist(t_list **stk)
 {
 	t_list	*tmp;
 
-	if(!stk || !(*stk)->next)
+	if (!stk || !(*stk)->next)
 		return ;
 	tmp = *stk;
 	*stk = (*stk)->next;
 	tmp->next = NULL;
 	ft_lstadd_back(stk, tmp);
 }
-void ft_swaplist(t_list **lst)
+
+void	ft_swaplist(t_list **lst)
 {
 	t_list	*tmp;
 
@@ -61,7 +65,8 @@ void ft_swaplist(t_list **lst)
 	tmp->next = *lst;
 	*lst = tmp;
 }
-void print_elem(int a)
+
+void	print_elem(int a)
 {
 	ft_printf("%d ", a);
 }

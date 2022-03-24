@@ -6,15 +6,15 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 11:43:25 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 16:24:38 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void error(void)
+void	error(void)
 {
-	write(1,"Error\n",6);
+	write(1, "Error\n", 6);
 	exit(-1);
 }
 
