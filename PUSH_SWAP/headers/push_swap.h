@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:46:41 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 16:23:37 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 19:18:20 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,20 @@
 /*
         ***LIST OPTIONS***
 */
-void	ft_push(t_list **a, t_list **b);
-void	ft_rrlist(t_list **stk);
-void	ft_rlist(t_list **stk);
-void	ft_swaplist(t_list **lst);
-void	ft_rrr(t_list **a, t_list **b);
-void	ft_rr(t_list **a, t_list **b);
+void	push(t_list **a, t_list **b);
+void	rrlist(t_list **stk);
+void	rlist(t_list **stk);
+void	swap(t_list **lst);
+void	rrr(t_list **a, t_list **b);
+void	rr(t_list **a, t_list **b);
 void	print_elem(int a);
+/*
+        ***LIST PRINTS OPTIONS***
+*/
+void	pr_swap(t_list **lst, char liter);
+void	pr_rlist(t_list **stk, char liter);
+void	pr_rrlist(t_list **stk, char liter);
+void	pr_push(t_list **a, t_list **b, char liter);
 /*
         ***SORT OPERATIONS***
 */

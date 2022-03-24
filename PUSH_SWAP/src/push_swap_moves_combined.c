@@ -6,22 +6,22 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:20:38 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 16:26:58 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 19:19:25 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	ft_rr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b)
 {
-	ft_rlist(a);
-	ft_rlist(b);
+	rlist(a);
+	rlist(b);
 	write(1, "rr\n", 3);
 }
 
-void	ft_rrr(t_list **a, t_list **b)
+void	rrr(t_list **a, t_list **b)
 {
-	ft_rrlist(a);
-	ft_rrlist(b);
+	rrlist(a);
+	rrlist(b);
 	write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:01:16 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/24 17:31:12 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/24 19:23:44 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ int	is_unq_stack(t_list	**lst)
 	return (1);
 }
 
-void	sort3(t_list **a)
+void	sort2(t_list **a, char liter)
 {
-	
+	if (!(*a) || !(*a)->next || is_sorted(a))
+		return ;
+	pr_swap(a, liter);
 }
