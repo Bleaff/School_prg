@@ -6,11 +6,27 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 16:02:56 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 00:17:55 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/25 14:51:37 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+
+void	get_sort(t_list **a, t_list **b)
+{
+	if (ft_lstsize(a) <= 3)
+		sort3(&a, 'a');
+	else if (ft_lstsize(a) <= 6)
+		sort6(&a, &b);
+	else
+	{
+		while (ft_lstsize(a) > 3 && !is_sorted(a))
+			pr_push(a, b, 'b');
+		if (!is_sorted(a))
+			sort3(a, 'a');
+		
+	}
+}
 
 void	sort2(t_list **a, char liter)
 {
@@ -56,6 +72,6 @@ void	sort6(t_list **a, t_list **b)
 		}
 		pr_push(b, a, 'b');
 	}
-    if (!is_sorted(a))
-        min_on_top(a);
+	if (!is_sorted(a))
+		min_on_top(a);
 }

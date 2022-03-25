@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:01:16 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 00:06:21 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/25 17:00:37 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,19 @@ int	is_unq_stack(t_list	**lst)
 		il = il->next;
 	}
 	return (1);
+}
+
+int	way_size(t_list **a,t_list **b, int elem)
+{
+	int	a_top;
+	int	a_bottom;
+	int	b_top;
+	int	b_bottom;
+
+	a_top = get_pos_top(a, elem);
+	a_bottom = get_pos_bottom(a, elem);
+	b_top = get_pos_top(b, elem);
+	b_bottom = get_pos_bottom(b, elem);
+	return (min(min(max(a_top, b_top), max(b_bottom, a_bottom)),
+		min(a_bottom + b_top, a_top + b_bottom)));
 }

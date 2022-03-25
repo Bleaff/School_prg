@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 00:20:49 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/25 16:25:28 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,18 @@ void	min_on_top(t_list **a)
 		else
 			pr_rlist(a, 'a');
 	}
+}
+
+int	min(int a, int b)
+{
+	if (a <= b)
+		return (a);
+	return (b);
+}
+
+int	max(int a, int b)
+{
+	if (a >= b)
+		return (a);
+	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:46:41 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 00:17:11 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/25 14:50:55 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int		is_unq_stack(t_list **lst);
 void	sort2(t_list **lst, char liter);
 void	sort3(t_list **a, char liter);
 void	sort6(t_list **a, t_list **b);
+void	get_sort(t_list **a, t_list **b);
+void	algo_sorting(t_list **a, t_list **b);
 /*
         ***PUSH_SWAP UTILS***
 */
