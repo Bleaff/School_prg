@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:01:16 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 17:00:37 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 01:02:12 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	is_unq_stack(t_list	**lst)
 	return (1);
 }
 
-int	way_size(t_list **a,t_list **b, int elem)
+int	way_size(t_list **a, t_list **b, int elem)
 {
 	int	a_top;
 	int	a_bottom;
@@ -64,5 +64,23 @@ int	way_size(t_list **a,t_list **b, int elem)
 	b_top = get_pos_top(b, elem);
 	b_bottom = get_pos_bottom(b, elem);
 	return (min(min(max(a_top, b_top), max(b_bottom, a_bottom)),
-		min(a_bottom + b_top, a_top + b_bottom)));
+			min(a_bottom + b_top, a_top + b_bottom)));
+}
+
+t_list	*find_best(t_list **a, t_list **b)
+{
+	t_list	*best;
+	t_list	*iter;
+
+	if (!(*b) || !(*b)->next)
+		return (NULL);
+	best = (*b);
+	iter = (*b);
+	while (iter)
+	{
+		if (way_size(a, b, best->content) > way_size(a, b, iter->content))
+			best = iter;
+		iter = iter->next;
+	}
+	return (best);
 }

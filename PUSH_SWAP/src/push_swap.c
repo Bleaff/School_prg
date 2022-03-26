@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:10:34 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 14:41:30 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 01:27:10 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ int	main(int argc, char *argv[])
 	if (is_sorted(&a) && is_unq_stack(&a))
 		return (0);
 	get_sort(&a, &b);
-	// ft_printf("List a: ");
-	// ft_lstiter(a, print_elem);
-	// ft_printf("\nList b: ");
-	// ft_lstiter(b, print_elem);
-	// ft_printf("sorted? \n%d\n", is_sorted(&a));
+	ft_clear_stack(&a);
 	return (0);
 }

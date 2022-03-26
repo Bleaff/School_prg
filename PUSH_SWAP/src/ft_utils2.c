@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 16:25:28 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 01:26:05 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,16 @@ int	max(int a, int b)
 	if (a >= b)
 		return (a);
 	return (b);
+}
+
+void	ft_clear_stack(t_list **a)
+{
+	t_list	*next;
+
+	while (*a)
+	{
+		next = (*a)->next;
+		free(*a);
+		*a = next;
+	}
 }

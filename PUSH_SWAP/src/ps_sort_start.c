@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 16:02:56 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 14:51:37 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 02:04:11 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 void	get_sort(t_list **a, t_list **b)
 {
-	if (ft_lstsize(a) <= 3)
-		sort3(&a, 'a');
-	else if (ft_lstsize(a) <= 6)
-		sort6(&a, &b);
+	if (ft_lstsize(*a) <= 3)
+		sort3(a, 'a');
+	else if (ft_lstsize(*a) <= 6)
+		sort6(a, b);
 	else
 	{
-		while (ft_lstsize(a) > 3 && !is_sorted(a))
+		while (ft_lstsize(*a) > 3 && !is_sorted(a))
 			pr_push(a, b, 'b');
 		if (!is_sorted(a))
 			sort3(a, 'a');
-		
+		while (*b)
+			algo_sorting(a, b);
+		if (!is_sorted(a))
+			min_on_top(a);
 	}
 }
 
