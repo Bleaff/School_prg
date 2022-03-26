@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/25 00:04:37 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 02:40:41 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	error(void)
 {
-	write(1, "Error\n", 6);
-	exit(-1);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 int	ps_atoi(const char *str)
