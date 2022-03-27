@@ -6,15 +6,14 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:47:39 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/27 21:44:41 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 22:01:28 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	algo_sorting(t_list **a, t_list **b)
+void	algo_sorting(t_list **a, t_list **b, t_list *best)
 {
-	t_list	*best;
 	t_list	*pos;
 	int		a_top;
 	int		b_top;
@@ -35,5 +34,4 @@ void	algo_sorting(t_list **a, t_list **b)
 		at_bb(a_top, b_bottom, a, b);
 	else if (way_size(a, b, best->content) == (a_bottom + b_top))
 		ab_bt(a_bottom, b_top, a, b);
-
 }

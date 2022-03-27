@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 00:45:35 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/27 21:10:20 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 22:01:08 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	both_top(int a_s, int b_s, t_list **a, t_list **b)
 	while (a_s)
 	{
 		pr_rlist(a, 'a');
-		a_s--;		
+		a_s--;
 	}
 	while (b_s)
 	{
