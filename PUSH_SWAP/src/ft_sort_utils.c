@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:01:16 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/27 01:02:12 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 21:38:51 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,18 @@ int	is_unq_stack(t_list	**lst)
 
 int	way_size(t_list **a, t_list **b, int elem)
 {
-	int	a_top;
-	int	a_bottom;
-	int	b_top;
-	int	b_bottom;
+	int		a_top;
+	int		a_bottom;
+	int		b_top;
+	int		b_bottom;
+	t_list	*pos;
 
-	a_top = get_pos_top(a, elem);
-	a_bottom = get_pos_bottom(a, elem);
+	pos = find_pos(a, elem);
+	a_top = get_pos_top(a, pos->content);
+	a_bottom = get_pos_bottom(a, pos->content);
 	b_top = get_pos_top(b, elem);
 	b_bottom = get_pos_bottom(b, elem);
-	return (min(min(max(a_top, b_top), max(b_bottom, a_bottom)),
+	return (min(min(max(b_bottom, a_bottom), max(a_top, b_top)),
 			min(a_bottom + b_top, a_top + b_bottom)));
 }
 
@@ -72,8 +74,6 @@ t_list	*find_best(t_list **a, t_list **b)
 	t_list	*best;
 	t_list	*iter;
 
-	if (!(*b) || !(*b)->next)
-		return (NULL);
 	best = (*b);
 	iter = (*b);
 	while (iter)
@@ -83,4 +83,16 @@ t_list	*find_best(t_list **a, t_list **b)
 		iter = iter->next;
 	}
 	return (best);
+}
+
+t_list	*find_min_elem(t_list **a)
+{
+	int		min;
+	t_list	*mine;
+
+	min = find_min(a);
+	mine = *a;
+	while (mine->content != min)
+		mine = mine->next;
+	return (mine);
 }

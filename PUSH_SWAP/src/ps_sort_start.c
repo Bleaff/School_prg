@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 16:02:56 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/27 02:45:08 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 20:39:51 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	get_sort(t_list **a, t_list **b)
 {
-	if (ft_lstsize(*a) <= 3)
+	int	size;
+
+	size = ft_lstsize(*a);
+	if (size <= 3)
 		sort3(a, 'a');
 	// else if (ft_lstsize(*a) <= 6)
 	// 	sort6(a, b);
@@ -58,28 +61,48 @@ void	sort3(t_list **a, char liter)
 		sort2(a, liter);
 }
 
-void	sort6(t_list **a, t_list **b)
-{
-	int	i;
+// void	sort6(t_list **a, t_list **b)
+// {
+// 	int		i;
+// 	int		size_a;
 
-	i = -1;
-	while (i++ < ft_lstsize(*a) / 2)
-		pr_push(a, b, 'b');
-	sort3(a, 'a');
-	sort3(b, 'b');
-	while (i--)
+// 	size_a = ft_lstsize((*a)) / 2;
+// 	i = 0;
+// 	while (i < size_a)
+// 	{
+// 		pr_push(a, b, 'b');
+// 		i++;
+// 	}
+// 	sort3(a, 'a');
+// 	// sort3(b, 'b');
+// 	while (*b)
+// 	{
+// 		if ((*a) == find_pos(a, (*b)->content))
+// 		{
+// 			pr_push(b, a, 'a');
+// 		}
+// 		else
+// 		{
+// 			pr_rlist(a, 'a');
+// 		}
+
+// 	}
+// 	if (!is_sorted(a))
+// 		min_on_top(a);
+// }
+
+t_list *find_pos(t_list **a, int con)
+{
+	t_list	*head;
+
+	head = find_min_elem(a);
+	while (head && head->content < con)
+		head = head->next;
+	if (!head)
 	{
-		while ((*b)->content > (*a)->content && !((*b)->content
-				== find_max(b) && (*a)->content == find_min(a)))
-		{
-			if (get_pos_top(a, (*b)->content)
-				>= get_pos_bottom(a, (*b)->content))
-				pr_rrlist(a, 'a');
-			else
-				pr_rlist(a, 'a');
-		}
-		pr_push(b, a, 'b');
+		head = *a;
+		while (head != find_min_elem(a) && head->content < con)
+			head = head->next;
 	}
-	if (!is_sorted(a))
-		min_on_top(a);
+	return (head);
 }

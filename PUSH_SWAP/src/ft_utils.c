@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/27 02:40:41 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/27 21:44:02 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,21 +70,10 @@ int	get_pos_top(t_list **a, int con)
 	if (!(*a))
 		return (-1);
 	iter = *a;
-	if (con > find_max(a))
+	while (iter && iter->content != con)
 	{
-		while (iter && iter->content != find_min(a))
-		{
-			iter = iter->next;
-			i++;
-		}
-	}
-	else if (con < find_max(a))
-	{
-		while (iter && con > iter->content)
-		{
-			iter = iter->next;
-			i++;
-		}
+		iter = iter->next;
+		i++;
 	}
 	return (i);
 }
@@ -95,15 +84,11 @@ int	get_pos_bottom(t_list **a, int con)
 	int		i;
 
 	i = 0;
-	if (!(*a))
-		return (-1);
+	if ((*a)->next == NULL)
+		return (i);
 	iter = *a;
-	if (con > find_max(a))
-		while (iter && iter->content != find_min(a))
-			iter = iter->next;
-	else if (con < find_max(a))
-		while (iter && con > iter->content)
-			iter = iter->next;
+	while (iter && iter->content != con)
+		iter = iter->next;
 	while (iter)
 	{
 		i++;
