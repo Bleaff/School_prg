@@ -6,19 +6,20 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/27 21:44:02 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/28 16:53:38 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	error(void)
+void	error(t_list **a)
 {
+	ft_clear_stack(a);
 	write(2, "Error\n", 6);
 	exit(1);
 }
 
-int	ps_atoi(const char *str)
+int	ps_atoi(const char *str, t_list **a)
 {
 	int		i;
 	long	res;
@@ -31,15 +32,17 @@ int	ps_atoi(const char *str)
 	{
 		i = 1;
 		neg = -1;
+		if (!ft_isdigit(str[1]))
+			error(a);
 	}
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')
 			res = res * 10 + (str[i] - '0');
 		else
-			error();
+			error(a);
 		if (res * neg > INT_MAX || res * neg < INT_MIN)
-			error();
+			error(a);
 		i++;
 	}
 	return (res * neg);

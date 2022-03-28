@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:46:41 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/27 22:00:14 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/28 15:48:16 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ void	ab_bt(int a_s, int b_s, t_list **a, t_list **b);
 /*
         ***PUSH_SWAP UTILS***
 */
-void	error(void);
+void	error(t_list **a);
 int		min(int a, int b);
 int		max(int a, int b);
-int		ps_atoi(const char *str);
+int		ps_atoi(const char *str, t_list **a);
 int		find_max(t_list **a);
 int		find_min(t_list **a);
 int		get_pos_bottom(t_list **a, int con);

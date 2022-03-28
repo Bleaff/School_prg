@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:01:16 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/27 21:38:51 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/03/28 15:50:36 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	is_unq_stack(t_list	**lst)
 		while (jl)
 		{
 			if (il->content == jl->content)
-				error();
+				error(lst);
 			jl = jl->next;
 		}
 		il = il->next;
