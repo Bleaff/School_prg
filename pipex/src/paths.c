@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 22:31:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/07/02 22:31:59 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/07/02 22:40:03 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,7 @@
 /*
 	Fulfills cmds of the pipe
 */
-void find_valid_path(char **envp, t_pipe *pipe);
+void find_valid_path(char **envp, t_pipe *pipe)
+{
+	
+}
