@@ -10,6 +10,7 @@ int main(int argc, char *argv[], char *envp[])
     int j = 0;
     int z = 0;
     char *path;
+    ft_printf("%s\n", argv[0]);
     while(envp[i])
     {
         if (ft_strncmp(envp[i], "PATH", ft_strlen("PATH")) == 0)
@@ -21,8 +22,11 @@ int main(int argc, char *argv[], char *envp[])
                 z++;
             path = ft_substr(envp[i], j, z - j);
             path = ft_strjoin(path, "/");
-            ft_printf("Path is %d!::%s\n",access(path, F_OK),path);
-
+            ft_printf("Path is %d!::/usr/bin/ls\n",access("/usr/bin/ls", F_OK));
+            //Let's try to exec ls cmd
+            // char *cmd = ft_strjoin(path, "ls");
+            char *command[] = {"ls", ".", NULL};
+            ft_printf("%d\n", execve("/usr/bin/ls", command, envp));
             
         }
         i++;
