@@ -22,11 +22,15 @@ typedef struct s_pipe{
 
 int main(int argc, char *argv[], char *envp[]);
 
-void *validate_argv(char **argv, int argc);
+int validate_argv(char **argv, int argc);
 
-void find_valid_path(char **envp, t_pipe *pipe);
+void find_valid_path(char **envp, t_cmd *cmd);
 
 void error(char *msg, t_pipe *pipe);
+
+void check_validation(t_pipe *pipe, int argc, char **argv, char **envp);
+
+void error_cmd(char *msg, t_cmd *cmd);
 
 
 
