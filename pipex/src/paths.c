@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 22:31:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/07/03 01:46:12 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/07/03 22:31:04 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ void find_valid_path(char **envp, t_cmd *cmd)
 		i++;
 	}
 	if (!cmd->cmd_path)
-		;
-	ft_printf("%s \n", find_path(envp));
+		ft_printf("Fucking fuck\n");
+	ft_printf("%s is correct!\n", cmd->cmd_path);
 }
