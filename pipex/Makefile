@@ -1,8 +1,11 @@
 NAME = pipex
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-SRC 			= ./src/Check_fork.c \
+SRC 			= ./src/main.c \
 				  ./src/paths.c \
+				  ./src/cmds.c \
+				  ./src/free_errors.c \
+				  ./src/validate.c \
 
 HEADERS 		= ./headers/
 LIBFT 			= libft
