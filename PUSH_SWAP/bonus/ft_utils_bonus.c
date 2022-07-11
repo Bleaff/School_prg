@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_utils_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
-/*   Updated: 2022/07/11 18:49:45 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/07/11 19:55:53 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,56 +46,4 @@ int	ps_atoi(const char *str, t_list **a)
 		i++;
 	}
 	return (res * neg);
-}
-
-int	find_max(t_list **a)
-{
-	t_list	*iter;
-	int		max;
-
-	iter = *a;
-	max = iter->content;
-	while (iter)
-	{
-		if (max < iter->content)
-			max = iter->content;
-		iter = iter->next;
-	}
-	return (max);
-}
-
-int	get_pos_top(t_list **a, int con)
-{
-	t_list	*iter;
-	int		i;
-
-	i = 0;
-	if (!(*a))
-		return (-1);
-	iter = *a;
-	while (iter && iter->content != con)
-	{
-		iter = iter->next;
-		i++;
-	}
-	return (i);
-}
-
-int	get_pos_bottom(t_list **a, int con)
-{
-	t_list	*iter;
-	int		i;
-
-	i = 0;
-	if ((*a)->next == NULL)
-		return (i);
-	iter = *a;
-	while (iter && iter->content != con)
-		iter = iter->next;
-	while (iter)
-	{
-		i++;
-		iter = iter->next;
-	}
-	return (i);
 }

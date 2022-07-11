@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_utils2_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 03:45:42 by bleaf             #+#    #+#             */
-/*   Updated: 2022/07/11 22:33:19 by bleaf            ###   ########.fr       */
+/*   Created: 2022/03/24 10:34:10 by bleaf             #+#    #+#             */
+/*   Updated: 2022/07/11 19:55:37 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_clear_stack(t_list **a)
 {
-	t_list	*lst_last;
+	t_list	*next;
 
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-		*lst = new;
-	else
+	while (*a)
 	{
-		lst_last = ft_lstlast(*lst);
-		lst_last->next = new;
+		next = (*a)->next;
+		free(*a);
+		*a = next;
 	}
 }

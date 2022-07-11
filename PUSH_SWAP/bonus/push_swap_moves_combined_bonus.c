@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   push_swap_moves_combined.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 03:45:42 by bleaf             #+#    #+#             */
-/*   Updated: 2022/07/11 22:33:19 by bleaf            ###   ########.fr       */
+/*   Created: 2022/03/22 17:20:38 by bleaf             #+#    #+#             */
+/*   Updated: 2022/03/24 19:19:25 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	rr(t_list **a, t_list **b)
 {
-	t_list	*lst_last;
+	rlist(a);
+	rlist(b);
+	write(1, "rr\n", 3);
+}
 
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		lst_last = ft_lstlast(*lst);
-		lst_last->next = new;
-	}
+void	rrr(t_list **a, t_list **b)
+{
+	rrlist(a);
+	rrlist(b);
+	write(1, "rrr\n", 4);
 }

@@ -6,15 +6,20 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 04:14:01 by bleaf             #+#    #+#             */
-/*   Updated: 2022/03/19 01:31:06 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/07/12 00:08:39 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
